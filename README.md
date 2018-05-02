@@ -20,4 +20,4 @@ This repository hosts code to calculate C, C_m, and the theoretical mean and var
 Language | Branch
 ---------- | --------
 C | [`C`](https://github.com/abmantz/cstat/tree/C)
-Python | todo
+Python | [`python`](https://github.com/abmantz/cstat/tree/python)

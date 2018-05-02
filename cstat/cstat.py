@@ -1,13 +1,24 @@
 import numpy as np
 
 def cash_classic(mu, x):
+  """
+Inputs:
+  mu: Mean parameter of the Poisson distribution
+  x:  Observed counts
+Output:
+  Cash statistic = 2.0 * (mu - x*ln(mu))
+  """
   return 2.0 * (mu - x*np.log(mu))
 
 def cash_mod(mu, x):
+  """
+Inputs:
+  mu: Mean parameter of the Poisson distribution
+  x:  Observed counts
+Output:
+  Modified Cash statistic = 2.0 * (mu - x + x*ln(x/mu))
+  """
   return 2.0 * (mu - x + x*np.log(x/mu))
-
-# See Kaastra (2017) for functions below, specifically eqns 8-22.
-# http://adsabs.harvard.edu/abs/2017A%26A...605A..51K
 
 ln2 = np.log(2.0)
 ln3 = np.log(3.0)
@@ -16,11 +27,17 @@ def _cash_mod_Sv(mu, lnmu):
   mu2 = mu**2
   return 4.0 * np.exp(-mu) * ( mu2 + mu * (mu - (1.0 + lnmu))**2 + 0.5*mu2 * (mu - 2.0*(1.0 + lnmu - ln2))**2 + mu*mu2/6.0 * (mu - 3.0*(1.0 + lnmu - ln3))**2 + mu2*mu2/24.0 * (4.0*(1.0 + lnmu - ln4))**2 )
 
-# C_e is the expectation value of the "cash_mod" statistic for a given model mean.
-# C_v is its theoretical variance.
-# Both of these are approximations to an infinite series, with relative accuracy ~1e-4
-# according to the Kaastra paper.
 def cash_mod_expectations(mu_in):
+  """
+Input:
+  mu_in: Mean parameter of the Poisson distribution (can be a numpy array)
+Output: a tuple containing
+  C_e = theoretical mean of the modified Cash statistic
+  C_e = theoretical variance of the modified Cash statistic
+  Each of these is an approximations to an infinite series, with relative accuracy ~1e-4.
+  See Kaastra (2017), specifically eqns 8-22.
+  http://adsabs.harvard.edu/abs/2017A%26A...605A..51K
+  """
   mu = np.asarray(mu_in)
   lnmu = np.log(mu)
   mi = 1.0/mu

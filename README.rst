@@ -1,4 +1,4 @@
-cstat
+cashstatistic
 ===============
 **Utility functions related to the Cash statistic**
 

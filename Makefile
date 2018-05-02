@@ -10,20 +10,17 @@ ARCHIVES = $(PACKAGE).a
 EXES = testexe
 OBJECTS = $(foreach s,$(PACKAGE),$(s).o)
 ALLOBJECTS = $(OBJECTS) $(foreach s,$(EXES),$(s).o)
-TESTOUTPUT = test.png
 
 objects: $(OBJECTS)
 archives: $(ARCHIVES)
 exe: $(EXES)
-test: $(TESTOUTPUT)
+test: exe
+	./testexe > test.dat && python test.py
 
 $(EXES): $(OBJECTS)
 
 $(ARCHIVES): $(OBJECTS)
 	$(RM) $@; $(AR) $@ $?
 
-test.png: testexe
-	R --vanilla < test.R
-
 clean:
-	$(RM) $(ALLOBJECTS) $(ARCHIVES) $(EXES) $(TESTOUTPUT)
+	$(RM) $(ALLOBJECTS) $(ARCHIVES) $(EXES)

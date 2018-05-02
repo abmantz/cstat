@@ -9,7 +9,7 @@ Real cash_mod_Sv(const Real mu, const Real lnmu) {
              ln4 = log(4.0);
   Real mu2 = mu*mu;
   Real s, x;
-  s = mu*mu;
+  s = mu2;
   x = mu - (1.0 + lnmu);
   s += mu * x*x;
   x = mu - 2.0*(1.0 + lnmu - ln2);

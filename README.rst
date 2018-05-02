@@ -1,3 +1,10 @@
+.. image:: https://img.shields.io/pypi/v/cashstatistic.svg
+   :alt: PyPi
+   :target: https://pypi.python.org/pypi/cashstatistic
+.. image:: https://img.shields.io/pypi/l/cashstatistic.svg
+   :alt: MIT
+   :target: https://mit-license.org/license.txt
+===============
 cashstatistic
 ===============
 **Utility functions related to the Cash statistic**

@@ -17,7 +17,7 @@ is equivalent to C for parameter inference (i.e. has the same dependence on mu),
 
 This repository hosts code to calculate C, C_m, and the theoretical mean and variance of C_m. For the sake of organization, implementations in different languages live in different branches.
 
-Language | Branch
----------- | --------
-C | [`C`](https://github.com/abmantz/cstat/tree/C)
-Python | [`python`](https://github.com/abmantz/cstat/tree/python)
+Language | Branch | Note
+---------- | -------- | ------
+C | [`C`](https://github.com/abmantz/cstat/tree/C) |
+Python | [`python`](https://github.com/abmantz/cstat/tree/python) | [On PyPi](https://pypi.org/project/cashstatistic/) (`pip install cashstatistic`)

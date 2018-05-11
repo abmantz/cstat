@@ -1,4 +1,4 @@
-CFLAGS += -O3
+CFLAGS += -O3 -fPIC
 AR += -r
 
 .PHONY: default objects archives exe test clean
@@ -6,7 +6,7 @@ AR += -r
 default: objects archives test
 
 PACKAGE = cstat
-ARCHIVES = $(PACKAGE).a
+ARCHIVES = lib$(PACKAGE).a
 EXES = testexe
 OBJECTS = $(foreach s,$(PACKAGE),$(s).o)
 ALLOBJECTS = $(OBJECTS) $(foreach s,$(EXES),$(s).o)

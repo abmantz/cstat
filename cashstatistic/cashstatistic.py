@@ -18,6 +18,8 @@ Inputs:
 Output:
   Modified Cash statistic = 2.0 * (mu - x + x*ln(x/mu))
   """
+  if x == 0:
+    return 2.0 * mu
   return 2.0 * (mu - x + x*np.log(x/mu))
 
 ln2 = np.log(2.0)

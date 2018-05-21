@@ -10,9 +10,7 @@ inline Real cash_classic(const Real mu, const Natural x) {
   return 2.0 * (mu - x*log(mu));
 }
 
-inline Real cash_mod(const Real mu, const Natural x) {
-  return 2.0 * (mu - x + x*log(x/mu));
-}
+Real cash_mod(const Real, const Natural);
 
 void cash_mod_expectations(const Real, Real*, Real*);
 

@@ -1,5 +1,10 @@
 #include "cstat.h"
 
+Real cash_mod(const Real mu, const Natural x) {
+  if (x == 0) return 2.0 * mu;
+  return 2.0 * (mu - x + x*log(x/mu));
+}
+
 // See Kaastra (2017) for functions below, specifically eqns 8-22.
 // http://adsabs.harvard.edu/abs/2017A%26A...605A..51K
 

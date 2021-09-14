@@ -1,1 +1,1 @@
-from cashstatistic import *
+from .cashstatistic import *

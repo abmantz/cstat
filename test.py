@@ -1,4 +1,4 @@
-import cstat
+import cashstatistic as cstat
 import numpy as np
 import matplotlib.pyplot as plt
 plt.rc('text', usetex=True)

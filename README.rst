@@ -4,6 +4,7 @@
 .. image:: https://img.shields.io/pypi/l/cashstatistic.svg
    :alt: MIT
    :target: https://mit-license.org/license.txt
+
 ===============
 cashstatistic
 ===============

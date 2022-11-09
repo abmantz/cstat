@@ -18,9 +18,7 @@ Inputs:
 Output:
   Modified Cash statistic = 2.0 * (mu - x + x*ln(x/mu))
   """
-  if x == 0:
-    return 2.0 * mu
-  return 2.0 * (mu - x + x*np.log(x/mu))
+  return np.where(x==0, 2.0*mu, 2.0*(mu - x + x*np.log(x/mu)))
 
 ln2 = np.log(2.0)
 ln3 = np.log(3.0)
@@ -35,7 +33,7 @@ Input:
   mu_in: Mean parameter of the Poisson distribution (can be a numpy array)
 Output: a tuple containing
   C_e = theoretical mean of the modified Cash statistic
-  C_e = theoretical variance of the modified Cash statistic
+  C_v = theoretical variance of the modified Cash statistic
   Each of these is an approximations to an infinite series, with relative accuracy ~1e-4.
   See Kaastra (2017), specifically eqns 8-22.
   http://adsabs.harvard.edu/abs/2017A%26A...605A..51K

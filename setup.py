@@ -23,7 +23,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.1.2',
+    version='0.1.3',
 
     description='Utility functions related to the Cash statistic',
     long_description=long_description,
@@ -33,7 +33,7 @@ setup(
 
     # Author details
     author='Adam Mantz',
-    author_email='amantz@slac.stanford.edu',
+    author_email='amantz@stanford.edu',
 
     # Choose your license
     license='MIT',
